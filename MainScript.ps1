@@ -57,7 +57,6 @@ function Main {
     Validity
     RegisterModules
     Install-TextEditor $InstallationfileLocation
-    
     Install-Verification
 }
 Main
