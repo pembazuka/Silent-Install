@@ -1,3 +1,5 @@
+mkdir -p "C:\Users\Abby\Documents\Logs"
+TMPFILE="C:\Users\Abby\Documents\Logs\logs.txt"
 function Install-TextEditor {
     <#
     .Description
@@ -8,24 +10,24 @@ function Install-TextEditor {
         $output = $false
         try {
             if ($retryInstallCount -gt 0) {
-                Write-Information "========================================================="
-                Write-Information "Installing Text Editor"
-                Write-Information "========================================================="
+                Write-Information "=========================================================" | tee -a $TMPFILE
+                Write-Information "Installing Text Editor" | tee -a $TMPFILE
+                Write-Information "=========================================================" | tee -a $TMPFILE
                 #1. retry installation if failed
                 #2. check if installation was successful
                 #validate the setup file passed is valid
-                Write-Information "Installation beginning..."
-                Write-Information ""
+                Write-Information "Installation beginning..." | tee -a $TMPFILE
+                Write-Information "" | tee -a $TMPFILE
                 Start-Process -FilePath $SetupFileLocation -Verb runas  -Wait -ErrorAction Stop
-                Write-Information "Installation completed."
-                Write-Information ""
+                Write-Information "Installation completed." | tee -a $TMPFILE
+                Write-Information "" | tee -a $TMPFILE
                 $output = $true
             }
         }
         catch {
             $output = $false
-            Write-Error "Notepadplus installation failed. Retry installation. $PSItem"
-            Write-Information ""
+            Write-Error "Notepadplus installation failed. Retry installation. $PSItem" | tee -a $TMPFILE
+            Write-Information "" | tee -a $TMPFILE
             Install-TextEditor $SetupFileLocation
         }
         return $output
