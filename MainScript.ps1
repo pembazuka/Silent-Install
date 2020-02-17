@@ -6,6 +6,22 @@ $InstallationfileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe
 # $InstallationfileLocation = msiexec /i "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.msi" /qn /norestart   // for silent .msi installation 
 #
 
+function Validity {
+    <#
+    .Description
+
+    Performs validity check to verify the path of the executable is correct and that the executable exists
+    #>
+    FILE=C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe
+    if (test -f "$FILE"){
+        Write-Information "FILE exist"
+    }
+    else{
+        Write-Information "FILE doesn't exist"
+    }
+
+}
+
 function RegisterModules {
     <#
     .Description
@@ -22,6 +38,15 @@ function RegisterModules {
     }
 }
 
+function Install-Verification {
+    if(Test-Path "C:\Program Files (x86)\Notepad++\notepad++.exe"){
+        Write-output "Notepad++ is already installed on your machine."
+    }
+    Else{
+        Write-Output "Notepad++ is not installed on your machine."
+    } 
+}
+
 function Main {
     <#
     .Description
@@ -29,7 +54,10 @@ function Main {
     It is from this point that installation of the text editorwill be intiated
 
     #>
+    Validity
     RegisterModules
     Install-TextEditor $InstallationfileLocation
+    
+    Install-Verification
 }
 Main
