@@ -5,7 +5,7 @@ Edit was made on line 22 if the InstallTextEditor.psm1 file to **Start-Process -
 
 # 1. How to handle failed installation
 
-This can be solved by creating a **function Install-Verification** in the MainScript.ps file that verifies whether Notepad++ has been                 installed in the system or not and providing an output incase it fails.
+This can be solved by creating **function Install-Verification** in the MainScript.ps file that verifies whether Notepad++ has been                 installed in the system or not and providing an output incase it fails.
 
 # 2. How to log the events being handled by the automation script
 
