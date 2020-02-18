@@ -1,6 +1,6 @@
 # Silent-Install
 
-Edit was made on the fourth line of the MainScript.ps1 to install the exe file silently.
+Edit was made on line 22 if the InstallTextEditor.psm1 file to **Start-Process -FilePath $SetupFileLocation -ArgumentList '/silent' -Wait -ErrorAction Stop** and file path was added to $SetupFileLocation on line 3.
 
 
 # 1. How to handle failed installation
