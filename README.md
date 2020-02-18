@@ -19,4 +19,4 @@ then we write all of the outputs to the file logs.txt using the command tee.
 
 # 3. How to ensure validity of data eg paths, .exe files throughout the execution of the script
 
-This can be solved by creating a **function Validity** in MainScript.ps file that checks to ensure the path as well as the executable exists 
+This can be solved by creating  **function Validity** in MainScript.ps file that checks to ensure the path as well as the executable exists. 
