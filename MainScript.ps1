@@ -9,7 +9,7 @@ function Validity {
 
     Performs validity check to verify the path of the executable is correct and that the executable exists
     #>
-    FILE=$InstallationfileLocation
+    FILE="C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe"
     if (test -f "$FILE"){
         Write-Information "FILE exist"
     }
