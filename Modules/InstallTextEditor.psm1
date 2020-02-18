@@ -1,5 +1,6 @@
 mkdir -p "C:\Users\Abby\Documents\Logs"
 TMPFILE="C:\Users\Abby\Documents\Logs\logs.txt"
+$SetupFileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe"
 function Install-TextEditor {
     <#
     .Description
@@ -18,7 +19,7 @@ function Install-TextEditor {
                 #validate the setup file passed is valid
                 Write-Information "Installation beginning..." | tee -a $TMPFILE
                 Write-Information "" | tee -a $TMPFILE
-                Start-Process -FilePath $SetupFileLocation -Verb runas  -Wait -ErrorAction Stop
+                Start-Process -FilePath $SetupFileLocation -ArgumentList '/silent' -Wait -ErrorAction Stop
                 Write-Information "Installation completed." | tee -a $TMPFILE
                 Write-Information "" | tee -a $TMPFILE
                 $output = $true
