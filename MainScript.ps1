@@ -1,11 +1,8 @@
 #Paths
 $WorkingDirectory = split-path -parent $MyInvocation.MyCommand.Definition
 $ModulesLocationPath = "$WorkingDirectory\Modules"
-$InstallationfileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe" /S /norestart   // for silent .exe installation
-#
-# $InstallationfileLocation = msiexec /i "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.msi" /qn /norestart   // for silent .msi installation 
-#
-
+$InstallationfileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe"
+# 
 function Validity {
     <#
     .Description
