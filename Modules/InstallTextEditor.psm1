@@ -1,5 +1,5 @@
-mkdir -p "C:\Users\Abby\Documents\Logs"
-TMPFILE="C:\Users\Abby\Documents\Logs\logs.txt"
+mkdir -p "C:\Users\pemba\Documents\Logs"
+New-Item "C:\Users\pemba\Documents\Logs\logs.txt"
 $SetupFileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe"
 function Install-TextEditor {
     <#
@@ -11,26 +11,27 @@ function Install-TextEditor {
         $output = $false
         try {
             if ($retryInstallCount -gt 0) {
-                Write-Information "=========================================================" | tee -a $TMPFILE
-                Write-Information "Installing Text Editor" | tee -a $TMPFILE
-                Write-Information "=========================================================" | tee -a $TMPFILE
+                Write-Information "=========================================================" 
+                Write-Information "Installing Text Editor"
+                Write-Information "========================================================="
                 #1. retry installation if failed
                 #2. check if installation was successful
                 #validate the setup file passed is valid
-                Write-Information "Installation beginning..." | tee -a $TMPFILE
+                Write-Information "Installation beginning..."
                 Write-Information "" | tee -a $TMPFILE
                 Start-Process -FilePath $SetupFileLocation -ArgumentList '/silent' -Wait -ErrorAction Stop
-                Write-Information "Installation completed." | tee -a $TMPFILE
-                Write-Information "" | tee -a $TMPFILE
+                Write-Information "Installation completed."
+                Write-Information ""
                 $output = $true
             }
         }
         catch {
             $output = $false
-            Write-Error "Notepadplus installation failed. Retry installation. $PSItem" | tee -a $TMPFILE
-            Write-Information "" | tee -a $TMPFILE
+            Write-Error "Notepadplus installation failed. Retry installation. $PSItem"
+            Write-Information ""
             Install-TextEditor $SetupFileLocation
         }
         return $output
     }
 }
+Install-TextEditor 6> C:\Users\pemba\Documents\Logs\logs.txt
