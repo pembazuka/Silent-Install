@@ -13,9 +13,9 @@ We create a directory in documents that contains a file called logs that logs ev
 
 mkdir -p "C:\Users\Abby\Documents\Logs"
 
-TMPFILE="C:\Users\Abby\Documents\Logs\logs.txt"
+New-Item "C:\Users\Abby\Documents\Logs\logs.txt"
 
-then we write all of the outputs to the file logs.txt using the command tee.
+then we write all of the outputs to the file logs.txt using **Install-TextEditor 6> C:\Users\pemba\Documents\Logs\logs.txt**.
 
 # 3. How to ensure validity of data eg paths, .exe files throughout the execution of the script
 
