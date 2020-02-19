@@ -1,5 +1,5 @@
-mkdir -p "C:\Users\pemba\Documents\Logs"
-New-Item "C:\Users\pemba\Documents\Logs\logs.txt"
+mkdir -p "C:\Users\Abby\Documents\Logs"
+New-Item "C:\Users\Abby\Documents\Logs\logs.txt"
 $SetupFileLocation = "C:\Users\Abby\Downloads\npp.7.7.1.Installer.x64.exe"
 function Install-TextEditor {
     <#
@@ -34,4 +34,4 @@ function Install-TextEditor {
         return $output
     }
 }
-Install-TextEditor 6> C:\Users\pemba\Documents\Logs\logs.txt
+Install-TextEditor 6> C:\Users\Abby\Documents\Logs\logs.txt
